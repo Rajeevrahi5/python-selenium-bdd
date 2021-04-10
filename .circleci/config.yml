@@ -1,0 +1,16 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.3.4
+jobs:
+  build-and-run-cucumber-test:
+    executor: python/default
+    steps:
+      - checkout
+      - python/install-deps
+      - python/tests/features
+      - run: behave mydashboadr.feature
+workflows:
+  main:
+    jobs:
+      - build-and-run-cucumber-test
