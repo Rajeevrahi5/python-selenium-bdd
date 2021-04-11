@@ -1,0 +1,23 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.3.4
+jobs:
+  build:
+    machine:
+      image: ubuntu-2004:202010-01
+    steps:
+      - checkout
+      - run: 
+          name: "install behave"
+          command: pip install behave
+      - run:
+          name: "Navigate to feature folder"
+          command: cd /home/circleci/project/tests/steps
+      - run:
+          name: "Build and run feature file"
+          command: behave -i mydashboard.feature
+workflows:
+  main:
+    jobs:
+      - build

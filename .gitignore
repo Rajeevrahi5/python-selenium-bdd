@@ -1,0 +1,3 @@
+ tests/features/geckodriver.log
+ ../../.idea/
+ ../steps/geckodriver.log
