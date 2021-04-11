@@ -13,7 +13,7 @@ jobs:
           command: pip install behave
       - run:
           name: "Navigate to feature folder"
-          command: cd /home/circleci/project/tests/steps
+          command: cd /home/circleci/project/tests
       - run:
           name: "Build and run feature file"
           command: behave -i mydashboard.feature
