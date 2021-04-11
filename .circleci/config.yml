@@ -13,7 +13,8 @@ jobs:
           command: pip install behave
       - run:
           name: "Build and run feature file"
-          command: behave mydashboadr.feature
+          paths: /tests/features/
+          command: behave mydashboard.feature
 workflows:
   main:
     jobs:
