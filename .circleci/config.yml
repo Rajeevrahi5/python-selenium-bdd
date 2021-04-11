@@ -9,7 +9,10 @@ jobs:
     steps:
       - checkout
       - run: 
-          name: "Buile and run feature file"
+          name: "install behave"
+          command: pip install behave
+      - run:
+          name: "Build and run feature file"
           command: behave mydashboadr.feature
 workflows:
   main:
